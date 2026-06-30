@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Даша &amp; Вова · Медовый месяц в Португалии</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --azul-deep:#13315C;   /* глубокая синь азулежу — герой, заголовки */
+    --azul:#2C6BA8;        /* плиточная синь — акценты, ссылки */
+    --azul-soft:#79A6D4;
+    --glaze:#F7F4EC;       /* глазурь керамики — фон страницы */
+    --glaze-2:#FBF9F3;     /* карточки */
+    --ink:#1D2A3A;         /* текст */
+    --ink-soft:#52617A;
+    --gold:#C2872F;        /* тёплый янтарь — закат, портвейн */
+    --line:#E4DCCB;
+
+    --p1:#2C6BA8;  /* Лиссабон — кобальт */
+    --p2:#C77A45;  /* Алгарве — охра/скалы */
+    --p3:#3C8678;  /* Кашкайш+Синтра — лес/океан */
+    --p4:#7A3B5C;  /* Север+Испания — портвейн */
+
+    --maxw:920px;
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--glaze);
+    color:var(--ink);
+    font-family:'Manrope',system-ui,sans-serif;
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--azul);text-decoration:none}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+
+  .mono{font-family:'IBM Plex Mono',monospace}
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:.7rem;letter-spacing:.26em;text-transform:uppercase;
+    color:var(--gold);
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    background:
+      radial-gradient(120% 90% at 80% -10%, #1c4170 0%, transparent 55%),
+      linear-gradient(160deg,#16386A 0%, #0F2A50 100%);
+    color:#fff;
+    padding:clamp(56px,11vw,110px) 0 clamp(40px,8vw,72px);
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='1.4'%3E%3Ccircle cx='0' cy='0' r='40'/%3E%3Ccircle cx='80' cy='0' r='40'/%3E%3Ccircle cx='0' cy='80' r='40'/%3E%3Ccircle cx='80' cy='80' r='40'/%3E%3Cpath d='M40 8 L72 40 L40 72 L8 40 Z'/%3E%3Ccircle cx='40' cy='40' r='5'/%3E%3C/g%3E%3C/svg%3E");
+    background-size:74px 74px;
+    opacity:.06;
+    pointer-events:none;
+  }
+  .hero .wrap{position:relative}
+  .hero .eyebrow{color:#E9C98A}
+  .hero-rule{width:46px;height:2px;background:var(--gold);margin:18px 0 22px;opacity:.9}
+  .names{
+    font-family:'Cormorant',Georgia,serif;
+    font-weight:500;
+    font-size:clamp(3.1rem,13vw,6.4rem);
+    line-height:.96;
+    letter-spacing:.5px;
+    margin:0;
+  }
+  .names .amp{color:var(--gold);font-style:italic;font-weight:400;padding:0 .12em}
+  .heart{color:var(--gold);font-size:.62em;vertical-align:.18em;margin-left:.12em}
+  .subtitle{
+    font-family:'Cormorant',Georgia,serif;font-style:italic;font-weight:400;
+    font-size:clamp(1.3rem,4.6vw,1.95rem);
+    color:#D8E3F2;margin:.55em 0 0;
+  }
+  .hero-facts{
+    margin-top:30px;display:flex;flex-wrap:wrap;gap:10px 8px;
+  }
+  .hero-facts span{
+    font-family:'IBM Plex Mono',monospace;font-size:.74rem;letter-spacing:.04em;
+    color:#cfe0f4;border:1px solid rgba(255,255,255,.22);
+    padding:7px 12px;border-radius:40px;
+  }
+  .hero-note{
+    margin-top:26px;max-width:54ch;color:#cdd9ea;font-size:1rem;
+  }
+
+  /* ---------- azulejo band (signature) ---------- */
+  .tileband{
+    height:54px;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%232C6BA8' stroke-width='1.7'%3E%3Ccircle cx='0' cy='0' r='40'/%3E%3Ccircle cx='80' cy='0' r='40'/%3E%3Ccircle cx='0' cy='80' r='40'/%3E%3Ccircle cx='80' cy='80' r='40'/%3E%3Cpath d='M40 8 L72 40 L40 72 L8 40 Z'/%3E%3Ccircle cx='40' cy='40' r='5'/%3E%3C/g%3E%3C/svg%3E");
+    background-size:54px 54px;
+    background-color:var(--glaze-2);
+    border-bottom:1px solid var(--line);
+  }
+
+  /* ---------- sticky phase nav ---------- */
+  .phasenav{
+    position:sticky;top:0;z-index:20;
+    background:rgba(247,244,236,.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .phasenav .row{
+    display:flex;gap:8px;overflow-x:auto;padding:11px 22px;
+    max-width:var(--maxw);margin:0 auto;-webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+  }
+  .phasenav .row::-webkit-scrollbar{display:none}
+  .chip{
+    white-space:nowrap;flex:0 0 auto;
+    font-size:.8rem;font-weight:600;color:var(--ink-soft);
+    border:1px solid var(--line);background:#fff;
+    padding:7px 13px;border-radius:40px;transition:.18s;
+    display:flex;align-items:center;gap:7px;
+  }
+  .chip .dot{width:8px;height:8px;border-radius:50%}
+  .chip:hover{color:var(--ink);border-color:#cfc6b2}
+  .chip.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+  /* ---------- intro / route ---------- */
+  .intro{padding:clamp(40px,7vw,66px) 0 6px}
+  .intro h2{
+    font-family:'Cormorant',Georgia,serif;font-weight:500;
+    font-size:clamp(1.7rem,5.5vw,2.4rem);margin:.1em 0 .35em;line-height:1.1;
+  }
+  .intro p{color:var(--ink-soft);max-width:60ch;margin:.4em 0}
+
+  .route{
+    margin:30px 0 8px;display:flex;gap:8px;overflow-x:auto;padding-bottom:10px;
+    scrollbar-width:none;
+  }
+  .route::-webkit-scrollbar{display:none}
+  .stop{
+    flex:0 0 auto;display:flex;align-items:center;gap:8px;
+    font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:var(--ink);
+    background:var(--glaze-2);border:1px solid var(--line);
+    padding:8px 12px;border-radius:8px;
+  }
+  .stop b{width:7px;height:7px;border-radius:2px;display:inline-block;transform:rotate(45deg)}
+  .route .arr{flex:0 0 auto;align-self:center;color:#c3b89f;font-size:.9rem}
+
+  /* ---------- phases ---------- */
+  .phase{padding:clamp(34px,6vw,58px) 0 8px}
+  .phasehead{display:flex;align-items:baseline;gap:14px;margin-bottom:6px}
+  .phasehead .tile{
+    flex:0 0 auto;width:26px;height:26px;border-radius:6px;position:relative;top:5px;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='5'%3E%3Cpath d='M40 4 L76 40 L40 76 L4 40 Z'/%3E%3Ccircle cx='40' cy='40' r='9'/%3E%3C/g%3E%3C/svg%3E");
+    background-size:cover;
+  }
+  .phasehead .meta{flex:1}
+  .phasehead .k{font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft)}
+  .phasehead h3{
+    font-family:'Cormorant',Georgia,serif;font-weight:600;
+    font-size:clamp(1.9rem,6vw,2.7rem);margin:.05em 0 0;line-height:1;color:var(--azul-deep);
+  }
+  .phaseline{height:2px;background:var(--line);margin:14px 0 26px;position:relative}
+  .phaseline::before{content:"";position:absolute;left:0;top:0;height:2px;width:64px;background:var(--accent)}
+
+  /* day cards */
+  .day{
+    position:relative;
+    background:var(--glaze-2);
+    border:1px solid var(--line);
+    border-left:4px solid var(--accent);
+    border-radius:12px;
+    padding:22px 22px 20px;
+    margin:0 0 16px;
+  }
+  .day-top{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin-bottom:8px}
+  .daynum{
+    font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.16em;
+    color:#fff;background:var(--accent);padding:4px 9px;border-radius:5px;
+  }
+  .daydate{font-family:'IBM Plex Mono',monospace;font-size:.78rem;color:var(--ink-soft);letter-spacing:.04em}
+  .opt-tag{
+    margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--accent);
+    border:1px dashed var(--accent);padding:3px 8px;border-radius:5px;
+  }
+  .day h4{
+    font-family:'Cormorant',Georgia,serif;font-weight:600;
+    font-size:clamp(1.45rem,4.6vw,1.8rem);line-height:1.08;margin:.1em 0 .5em;color:var(--ink);
+  }
+  .pills{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px}
+  .pill{
+    font-size:.74rem;font-weight:600;color:var(--accent);
+    background:color-mix(in srgb,var(--accent) 9%, #fff);
+    border:1px solid color-mix(in srgb,var(--accent) 24%, #fff);
+    padding:4px 10px;border-radius:40px;letter-spacing:.01em;
+  }
+  .day p{margin:.3em 0;color:var(--ink)}
+  .pin{
+    color:var(--azul);border-bottom:1px solid color-mix(in srgb,var(--azul) 35%, transparent);
+    transition:.15s;white-space:nowrap;
+  }
+  .pin:hover{border-color:var(--azul)}
+  .pin::after{content:" ↗";font-size:.7em;color:var(--azul-soft);border:none}
+
+  .note{
+    margin-top:14px;display:flex;gap:10px;align-items:flex-start;
+    font-size:.92rem;line-height:1.55;
+    background:#fff;border:1px solid var(--line);border-radius:9px;padding:11px 13px;
+  }
+  .note .ic{flex:0 0 auto;font-size:1rem;line-height:1.3}
+  .note.book{background:color-mix(in srgb,var(--gold) 8%,#fff);border-color:color-mix(in srgb,var(--gold) 30%,#fff)}
+  .note.book b{color:#8a5e1d}
+  .note.tip b{color:var(--ink)}
+  .note a{font-weight:600}
+
+  /* ---------- generic section card ---------- */
+  .block{padding:clamp(34px,6vw,56px) 0 8px}
+  .block > .wrap > h3{
+    font-family:'Cormorant',Georgia,serif;font-weight:600;
+    font-size:clamp(1.8rem,5.6vw,2.5rem);margin:0 0 4px;color:var(--azul-deep);line-height:1;
+  }
+  .block .sub{color:var(--ink-soft);margin:.2em 0 24px;max-width:58ch}
+
+  .tips{display:grid;gap:13px}
+  @media(min-width:660px){.tips{grid-template-columns:1fr 1fr}}
+  .tipcard{
+    background:var(--glaze-2);border:1px solid var(--line);border-radius:11px;padding:17px 18px;
+  }
+  .tipcard h5{
+    margin:0 0 4px;font-size:1rem;font-weight:700;display:flex;gap:9px;align-items:center;color:var(--ink);
+  }
+  .tipcard h5 .e{font-size:1.05rem}
+  .tipcard p{margin:0;font-size:.93rem;color:var(--ink-soft);line-height:1.55}
+
+  /* decisions */
+  .decis{background:var(--azul-deep);color:#fff;border-radius:16px;padding:clamp(26px,5vw,40px);margin-top:8px}
+  .decis .eyebrow{color:#E9C98A}
+  .decis h3{font-family:'Cormorant',Georgia,serif;font-weight:600;font-size:clamp(1.7rem,5.2vw,2.3rem);margin:.25em 0 .15em;color:#fff}
+  .decis > p{color:#cdd9ea;max-width:56ch;margin:.2em 0 22px}
+  .qrow{display:flex;gap:14px;padding:16px 0;border-top:1px solid rgba(255,255,255,.16)}
+  .qrow:last-child{padding-bottom:0}
+  .qn{font-family:'Cormorant',Georgia,serif;font-size:1.7rem;line-height:1;color:var(--gold);flex:0 0 auto;width:30px}
+  .qbody b{display:block;font-size:1.02rem;margin-bottom:2px}
+  .qbody span{color:#bcc9dd;font-size:.93rem}
+
+  /* footer */
+  footer{margin-top:54px;background:#0F2A50;color:#cdd9ea;text-align:center;padding:48px 22px}
+  footer .tileband-mini{
+    height:30px;width:100%;max-width:340px;margin:0 auto 26px;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23E9C98A' stroke-width='1.6'%3E%3Ccircle cx='0' cy='0' r='40'/%3E%3Ccircle cx='80' cy='0' r='40'/%3E%3Ccircle cx='0' cy='80' r='40'/%3E%3Ccircle cx='80' cy='80' r='40'/%3E%3Cpath d='M40 8 L72 40 L40 72 L8 40 Z'/%3E%3Ccircle cx='40' cy='40' r='5'/%3E%3C/g%3E%3C/svg%3E");
+    background-size:30px 30px;opacity:.55;
+  }
+  footer .big{font-family:'Cormorant',Georgia,serif;font-style:italic;font-size:clamp(1.5rem,5vw,2.1rem);color:#fff;margin:0 0 8px}
+  footer .sign{font-family:'IBM Plex Mono',monospace;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:#8fa6c4}
+
+  /* reveal */
+  .rv{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+  .rv.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .rv{opacity:1;transform:none;transition:none}
+  }
+
+  :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:3px}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Медовый месяц · 10 – 24 июля 2026</div>
+    <div class="hero-rule"></div>
+    <h1 class="names">Даша<span class="amp">&amp;</span>Вова<span class="heart">♥</span></h1>
+    <p class="subtitle">Португалия — от океана Лиссабона до виноградников Дору</p>
+    <div class="hero-facts">
+      <span>15 ДНЕЙ</span>
+      <span>2 СТРАНЫ</span>
+      <span>ОКЕАН · ДВОРЦЫ · ВИНО</span>
+    </div>
+    <p class="hero-note">Маршрут на две недели: пара дней на Лиссабон, юг с пляжами Алгарве, сказочная Синтра рядом с нами в Кашкайше, а потом дорога на север — Порту, долина Дору и вылазка в Испанию. Открывайте с телефона и сверяйтесь по дням.</p>
+  </div>
+</header>
+
+<div class="tileband" aria-hidden="true"></div>
+
+<nav class="phasenav" aria-label="Этапы поездки">
+  <div class="row">
+    <a class="chip" href="#p1"><span class="dot" style="background:var(--p1)"></span>Лиссабон</a>
+    <a class="chip" href="#p2"><span class="dot" style="background:var(--p2)"></span>Алгарве</a>
+    <a class="chip" href="#p3"><span class="dot" style="background:var(--p3)"></span>Кашкайш &amp; Синтра</a>
+    <a class="chip" href="#p4"><span class="dot" style="background:var(--p4)"></span>Север &amp; Испания</a>
+    <a class="chip" href="#tips"><span class="dot" style="background:var(--gold)"></span>Полезное</a>
+  </div>
+</nav>
+
+<section class="intro">
+  <div class="wrap rv">
+    <div class="eyebrow">Маршрут целиком</div>
+    <h2>Один большой круг по Иберии</h2>
+    <p>Сначала спускаемся на юг к скалам Алгарве, возвращаемся к нам и ловим Синтру, а затем идём на север через Назаре в Порту и Дору — и при желании сворачиваем в Испанию, чтобы вернуться к океану под конец.</p>
+    <div class="route" aria-hidden="true">
+      <span class="stop"><b style="background:var(--p1)"></b>Лиссабон</span><span class="arr">→</span>
+      <span class="stop"><b style="background:var(--p2)"></b>Алгарве</span><span class="arr">→</span>
+      <span class="stop"><b style="background:var(--p3)"></b>Кашкайш</span><span class="arr">→</span>
+      <span class="stop"><b style="background:var(--p3)"></b>Синтра</span><span class="arr">→</span>
+      <span class="stop"><b style="background:var(--p4)"></b>Обидуш · Назаре</span><span class="arr">→</span>
+      <span class="stop"><b style="background:var(--p4)"></b>Порту</span><span class="arr">→</span>
+      <span class="stop"><b style="background:var(--p4)"></b>Дору</span><span class="arr">→</span>
+      <span class="stop"><b style="background:var(--p4)"></b>Саламанка · Мадрид</span><span class="arr">→</span>
+      <span class="stop"><b style="background:var(--p1)"></b>Лиссабон</span>
+    </div>
+  </div>
+</section>
+
+<!-- PHASE 1 -->
+<section class="phase" id="p1" style="--accent:var(--p1)">
+  <div class="wrap">
+    <div class="phasehead rv">
+      <span class="tile" style="background-color:var(--p1)"></span>
+      <div class="meta">
+        <div class="k">Этап I · 10–11 июля</div>
+        <h3>Лиссабон</h3>
+      </div>
+    </div>
+    <div class="phaseline rv"></div>
+
+    <article class="day rv">
+      <div class="day-top">
+        <span class="daynum">ДЕНЬ 01</span>
+        <span class="daydate">10 ИЮЛЯ · ПТ</span>
+      </div>
+      <h4>Прилёт в Лиссабон</h4>
+      <div class="pills"><span class="pill">Лиссабон</span><span class="pill">первый вечер</span></div>
+      <p>Вечерний прилёт — заселяетесь и выдыхаете после дороги. На первый вечер без всяких планов: лёгкий ужин и прогулка в <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Cais+do+Sodre+Lisboa" target="_blank" rel="noopener">Cais do Sodré</a> или <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Bairro+Alto+Lisboa" target="_blank" rel="noopener">Bairro Alto</a>, бокал вина и первые огни города.</p>
+      <div class="note tip"><span class="ic">🚕</span><div><b>Из аэропорта</b> — 15–20 минут на такси или Bolt до центра. Удобнее, чем тащить чемоданы в метро вечером.</div></div>
+    </article>
+
+    <article class="day rv">
+      <div class="day-top">
+        <span class="daynum">ДЕНЬ 02</span>
+        <span class="daydate">11 ИЮЛЯ · СБ</span>
+      </div>
+      <h4>Весь день — Лиссабон</h4>
+      <div class="pills"><span class="pill">Лиссабон</span><span class="pill">свободный день</span></div>
+      <p>Целый день на город. Утро — <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Alfama+Lisboa" target="_blank" rel="noopener">Алфама</a> (собор Sé, смотровая Santa Luzia, легендарный трамвай 28), затем <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Praca+do+Comercio+Lisboa" target="_blank" rel="noopener">площадь Комерсиу</a> и Chiado. После обеда — <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Mosteiro+dos+Jeronimos+Belem" target="_blank" rel="noopener">Белен</a>: монастырь Жеронимуш, башня Belém и оригинальные <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Pasteis+de+Belem" target="_blank" rel="noopener">паштел-де-Белен</a>. На закат — смотровая <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Miradouro+Senhora+do+Monte+Lisboa" target="_blank" rel="noopener">Senhora do Monte</a>.</p>
+      <div class="note tip"><span class="ic">🚊</span><div><b>Трамвай 28</b> атмосферный, но очереди и карманники — садитесь рано утром на конечной и держите телефон при себе.</div></div>
+    </article>
+  </div>
+</section>
+
+<!-- PHASE 2 -->
+<section class="phase" id="p2" style="--accent:var(--p2)">
+  <div class="wrap">
+    <div class="phasehead rv">
+      <span class="tile" style="background-color:var(--p2)"></span>
+      <div class="meta">
+        <div class="k">Этап II · 12–13 июля</div>
+        <h3>Юг · Алгарве</h3>
+      </div>
+    </div>
+    <div class="phaseline rv"></div>
+
+    <article class="day rv">
+      <div class="day-top">
+        <span class="daynum">ДЕНЬ 03</span>
+        <span class="daydate">12 ИЮЛЯ · ВС</span>
+      </div>
+      <h4>Утром к нам, потом на юг</h4>
+      <div class="pills"><span class="pill">Кашкайш</span><span class="pill">Алгарве</span><span class="pill">≈ 2,5–3 ч в пути</span></div>
+      <p>Утром приезжаете к нам в Кашкайш — и все вместе стартуем на юг. Первый день Алгарве: старый город <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Albufeira+Old+Town" target="_blank" rel="noopener">Албуфейры</a> и пляж с охровыми скалами <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Praia+da+Falesia+Algarve" target="_blank" rel="noopener">Praia da Falésia</a>, марина <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Marina+de+Vilamoura" target="_blank" rel="noopener">Виламоры</a>, а на закат едем в <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Ponta+da+Piedade+Lagos" target="_blank" rel="noopener">Лагуш к Ponta da Piedade</a> — золотым скалам прямо над океаном.</p>
+      <div class="note tip"><span class="ic">⏳</span><div><b>День плотный.</b> Если в дороге устанете — Лагуш не обязателен сегодня, закат можно встретить и в Виламоре, а Ponta da Piedade оставить на завтра.</div></div>
+    </article>
+
+    <article class="day rv">
+      <div class="day-top">
+        <span class="daynum">ДЕНЬ 04</span>
+        <span class="daydate">13 ИЮЛЯ · ПН</span>
+      </div>
+      <h4>Пляжный день</h4>
+      <div class="pills"><span class="pill">Алгарве</span><span class="pill">свободный день</span></div>
+      <p>День у океана (у меня с утра запись по ВНЖ — гуляете в своём ритме). Марина <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Marina+de+Vilamoura" target="_blank" rel="noopener">Виламоры</a> для завтрака и вечера, а между — лучшие пляжи: <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Praia+da+Marinha+Algarve" target="_blank" rel="noopener">Praia da Marinha</a> (одна из красивейших в Европе) и грот <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Benagil+Cave" target="_blank" rel="noopener">Benagil</a> — внутрь на лодке или каяке.</p>
+      <div class="note book"><span class="ic">🛶</span><div><b>Бронируйте заранее:</b> лодку/каяк в пещеру Benagil летом разбирают быстро. И на пляжи приезжайте к 9–10 утра — парковки забиваются.</div></div>
+    </article>
+  </div>
+</section>
+
+<!-- PHASE 3 -->
+<section class="phase" id="p3" style="--accent:var(--p3)">
+  <div class="wrap">
+    <div class="phasehead rv">
+      <span class="tile" style="background-color:var(--p3)"></span>
+      <div class="meta">
+        <div class="k">Этап III · 14–15 июля</div>
+        <h3>Кашкайш &amp; Синтра</h3>
+      </div>
+    </div>
+    <div class="phaseline rv"></div>
+
+    <article class="day rv">
+      <div class="day-top">
+        <span class="daynum">ДЕНЬ 05</span>
+        <span class="daydate">14 ИЮЛЯ · ВТ</span>
+      </div>
+      <h4>Назад в Кашкайш</h4>
+      <div class="pills"><span class="pill">Кашкайш</span><span class="pill">≈ 2,5 ч в пути</span></div>
+      <p>Возвращаемся на север. Вы заселяетесь в Кашкайше, в зелёной <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Quinta+da+Marinha+Cascais" target="_blank" rel="noopener">Quinta da Marinha</a> у соснового леса и океана. Вечер — пляжи и марина <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Cascais+Portugal" target="_blank" rel="noopener">Кашкайша</a>, уютный центр, мороженое и закат на побережье в сторону <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Praia+do+Guincho" target="_blank" rel="noopener">Guincho</a>.</p>
+    </article>
+
+    <article class="day rv">
+      <div class="day-top">
+        <span class="daynum">ДЕНЬ 06</span>
+        <span class="daydate">15 ИЮЛЯ · СР</span>
+      </div>
+      <h4>Синтра и дикий берег</h4>
+      <div class="pills"><span class="pill">Синтра</span><span class="pill">побережье</span></div>
+      <p>Сказочная Синтра: разноцветный дворец <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Pena+Palace+Sintra" target="_blank" rel="noopener">Pena</a> на вершине горы и <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Quinta+da+Regaleira+Sintra" target="_blank" rel="noopener">Quinta da Regaleira</a> с колодцем посвящения и подземными тоннелями. Дальше — <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Cabo+da+Roca" target="_blank" rel="noopener">Cabo da Roca</a>, самая западная точка Европы, и обрывистая деревня <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Azenhas+do+Mar" target="_blank" rel="noopener">Azenhas do Mar</a> на закат.</p>
+      <div class="note book"><span class="ic">🎟️</span><div><b>Билеты — строго заранее, по слотам:</b> <a href="https://www.parquesdesintra.pt/en/" target="_blank" rel="noopener">дворец Pena</a> и <a href="https://www.regaleira.pt/en/" target="_blank" rel="noopener">Quinta da Regaleira</a> (в Регалейре есть аудиогид на русском).</div></div>
+      <div class="note tip"><span class="ic">🚐</span><div><b>Машинам наверх к Pena нельзя.</b> Паркуйтесь в центре Синтры, дальше — тук-тук или автобус 434. Берите ранний слот, пока нет толп.</div></div>
+    </article>
+  </div>
+</section>
+
+<!-- PHASE 4 -->
+<section class="phase" id="p4" style="--accent:var(--p4)">
+  <div class="wrap">
+    <div class="phasehead rv">
+      <span class="tile" style="background-color:var(--p4)"></span>
+      <div class="meta">
+        <div class="k">Этап IV · 16–24 июля</div>
+        <h3>Север &amp; Испания</h3>
+      </div>
+    </div>
+    <div class="phaseline rv"></div>
+    <p class="rv" style="color:var(--ink-soft);margin:-12px 0 24px;font-size:.95rem">Эта часть — мой черновик-предложение, его легко перекроить. Дни с меткой <span class="mono" style="color:var(--p4);font-size:.8rem">ПРЕДЛОЖЕНИЕ</span> можно менять под настроение (см. вопросы в конце).</p>
+
+    <article class="day rv">
+      <div class="day-top">
+        <span class="daynum">ДЕНЬ 07</span>
+        <span class="daydate">16 ИЮЛЯ · ЧТ</span>
+      </div>
+      <h4>На север: Обидуш → Назаре → Порту</h4>
+      <div class="pills"><span class="pill">Óbidos</span><span class="pill">Nazaré</span><span class="pill">Porto · 2 ночи</span></div>
+      <p>Выезжаете из Кашкайша. Сначала <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Obidos+Portugal" target="_blank" rel="noopener">Óbidos</a> — средневековый городок в крепостных стенах (попробуйте джинжинью, вишнёвый ликёр в шоколадной рюмочке), затем <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Miradouro+do+Sitio+Nazare" target="_blank" rel="noopener">Назаре</a> со смотровой Sítio над океаном. К вечеру — <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Porto+Portugal" target="_blank" rel="noopener">Порту</a>.</p>
+      <div class="note tip"><span class="ic">🌊</span><div><b>Про волны-гиганты:</b> те самые монстры в Назаре — это октябрь–март. Летом море спокойное; зато огромный пляж и драматичная смотровая остаются.</div></div>
+    </article>
+
+    <article class="day rv">
+      <div class="day-top">
+        <span class="daynum">ДЕНЬ 08</span>
+        <span class="daydate">17 ИЮЛЯ · ПТ</span>
+      </div>
+      <h4>Порту</h4>
+      <div class="pills"><span class="pill">Porto</span><span class="pill">портвейн</span></div>
+      <p>Целый день в Порту: набережная <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Ribeira+Porto" target="_blank" rel="noopener">Ribeira</a>, мост <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Ponte+Luis+I+Porto" target="_blank" rel="noopener">Dom Luís I</a>, погреба портвейна в <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Vila+Nova+de+Gaia" target="_blank" rel="noopener">Vila Nova de Gaia</a>, книжный <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Livraria+Lello+Porto" target="_blank" rel="noopener">Livraria Lello</a> и азулежу на вокзале <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Estacao+Sao+Bento+Porto" target="_blank" rel="noopener">São Bento</a>. На закат — бокал портвейна с видом на Дору.</p>
+      <div class="note book"><span class="ic">📖</span><div><b>Заранее:</b> дегустацию в погребе (Graham’s, Taylor’s, Cálem) и вход в Livraria Lello — там вход по билету со слотом.</div></div>
+    </article>
+
+    <article class="day rv">
+      <div class="day-top">
+        <span class="daynum">ДЕНЬ 09</span>
+        <span class="daydate">18 ИЮЛЯ · СБ</span>
+      </div>
+      <h4>Долина Дору</h4>
+      <div class="pills"><span class="pill">Douro</span><span class="pill">вино · круиз</span></div>
+      <p>День в <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Pinhao+Douro+Valley" target="_blank" rel="noopener">долине Дору</a> — старейшем винодельческом регионе мира (ЮНЕСКО). Тур из Порту обычно включает две винодельни, обед, часовой круиз на рабело из Pinhão и легендарную дорогу <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Estrada+Nacional+222+Douro" target="_blank" rel="noopener">N222</a>. Удобно — дегустируете без руля.</p>
+      <div class="note book"><span class="ic">🍷</span><div><b>Тур — заранее:</b> <a href="https://www.getyourguide.com/porto-l151/from-porto-douro-valley-w-boat-tour-wine-tasting-lunch-t73660/" target="_blank" rel="noopener">Дору с круизом, дегустацией и обедом</a> (вариантов много, этот — ориентир).</div></div>
+      <div class="note tip"><span class="ic">💞</span><div><b>На медовый месяц:</b> можно не возвращаться в Порту, а заночевать на винодельне-кинте прямо в долине — очень романтично.</div></div>
+    </article>
+
+    <article class="day rv">
+      <div class="day-top">
+        <span class="daynum">ДЕНЬ 10</span>
+        <span class="daydate">19 ИЮЛЯ · ВС</span>
+        <span class="opt-tag">Предложение</span>
+      </div>
+      <h4>В Испанию: Саламанка → Мадрид</h4>
+      <div class="pills"><span class="pill">Salamanca</span><span class="pill">Madrid · 3 ночи</span></div>
+      <p>Едете на восток в Испанию. По пути — <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Plaza+Mayor+Salamanca" target="_blank" rel="noopener">Саламанка</a>, золотой университетский город с одной из красивейших площадей Plaza Mayor (обед и прогулка). К вечеру — <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Puerta+del+Sol+Madrid" target="_blank" rel="noopener">Мадрид</a>.</p>
+      <div class="note tip"><span class="ic">🕐</span><div><b>На границе:</b> часы переводим на +1 час (Испания живёт по другому времени), и появляются платные трассы AP.</div></div>
+    </article>
+
+    <article class="day rv">
+      <div class="day-top">
+        <span class="daynum">ДЕНЬ 11</span>
+        <span class="daydate">20 ИЮЛЯ · ПН</span>
+        <span class="opt-tag">Предложение</span>
+      </div>
+      <h4>Мадрид</h4>
+      <div class="pills"><span class="pill">Madrid</span></div>
+      <p>Puerta del Sol, Plaza Mayor, Королевский дворец, музей <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Museo+del+Prado+Madrid" target="_blank" rel="noopener">Prado</a> (или Reina Sofía с «Герникой»), парк <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Parque+del+Retiro+Madrid" target="_blank" rel="noopener">Retiro</a>, Gran Vía и тапас в La Latina. Закат — с крыши Círculo de Bellas Artes.</p>
+      <div class="note tip"><span class="ic">🌡️</span><div><b>В июле жарко (35°+).</b> Музеи и отдых — в дневное пекло, а гулять выходите вечером, когда город оживает.</div></div>
+    </article>
+
+    <article class="day rv">
+      <div class="day-top">
+        <span class="daynum">ДЕНЬ 12</span>
+        <span class="daydate">21 ИЮЛЯ · ВТ</span>
+        <span class="opt-tag">Предложение</span>
+      </div>
+      <h4>Толедо или Сеговия</h4>
+      <div class="pills"><span class="pill">Toledo</span><span class="pill">или Segovia</span></div>
+      <p>Вылазка из Мадрида: <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Toledo+Spain" target="_blank" rel="noopener">Толедо</a> (30 минут на поезде — средневековый город трёх культур, собор, Эль Греко) или <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Acueducto+de+Segovia" target="_blank" rel="noopener">Сеговия</a> (римский акведук, замок Alcázar и молочный поросёнок).</p>
+    </article>
+
+    <article class="day rv">
+      <div class="day-top">
+        <span class="daynum">ДЕНЬ 13</span>
+        <span class="daydate">22 ИЮЛЯ · СР</span>
+        <span class="opt-tag">Предложение</span>
+      </div>
+      <h4>Назад в Португалию</h4>
+      <div class="pills"><span class="pill">Évora</span><span class="pill">Lisboa</span></div>
+      <p>Длинный перегон Мадрид → Лиссабон (~6 ч). Разбейте его остановкой в <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Templo+Romano+Evora" target="_blank" rel="noopener">Эворе</a> (римский храм, Капела душ Оссуш) — и к вечеру вы снова у океана.</p>
+    </article>
+
+    <article class="day rv">
+      <div class="day-top">
+        <span class="daynum">ДЕНЬ 14</span>
+        <span class="daydate">23 ИЮЛЯ · ЧТ</span>
+      </div>
+      <h4>Последний день у океана</h4>
+      <div class="pills"><span class="pill">Лиссабон</span><span class="pill">Кашкайш</span></div>
+      <p>Спокойный финал: всё, что не успели — <a class="pin" href="https://www.google.com/maps/search/?api=1&query=LX+Factory+Lisboa" target="_blank" rel="noopener">LX Factory</a>, <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Time+Out+Market+Lisboa" target="_blank" rel="noopener">Time Out Market</a>, последний пляжный день на <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Praia+do+Guincho" target="_blank" rel="noopener">Guincho</a> и прощальный ужин с нами.</p>
+    </article>
+
+    <article class="day rv">
+      <div class="day-top">
+        <span class="daynum">ДЕНЬ 15</span>
+        <span class="daydate">24 ИЮЛЯ · ПТ</span>
+      </div>
+      <h4>Вылет</h4>
+      <div class="pills"><span class="pill">Лиссабон</span></div>
+      <p>Домой — с песком в чемодане и Португалией в сердце. <em>Até já!</em> 🇵🇹</p>
+    </article>
+  </div>
+</section>
+
+<!-- TIPS -->
+<section class="block" id="tips">
+  <div class="wrap rv">
+    <div class="eyebrow">Чтобы всё прошло гладко</div>
+    <h3>Полезное</h3>
+    <p class="sub">Шесть вещей, которые экономят нервы в июльской Иберии.</p>
+    <div class="tips">
+      <div class="tipcard">
+        <h5><span class="e">🎟️</span>Билеты в Синтру — заранее</h5>
+        <p>Pena и Regaleira — вход по слотам с точным временем. Машинам к Pena нельзя: парковка в центре, дальше тук-тук или 434. Берите утренний слот.</p>
+      </div>
+      <div class="tipcard">
+        <h5><span class="e">🏖️</span>Пляжи — рано утром</h5>
+        <p>На Алгарве (и в Кашкайше) парковки забиваются к 10–11. Приезжаете к 9 — и пляж, и место, и тень ваши.</p>
+      </div>
+      <div class="tipcard">
+        <h5><span class="e">🌊</span>Назаре летом — спокойное</h5>
+        <p>Гигантские волны из видео — это зима (окт–март). Летом едем за смотровой Sítio и огромным пляжем, а не за штормом.</p>
+      </div>
+      <div class="tipcard">
+        <h5><span class="e">🌡️</span>Мадрид: жара и +1 час</h5>
+        <p>В июле днём 35°+. Музеи и сиеста — днём, прогулки — вечером. И помните про смену часового пояса на испанской границе.</p>
+      </div>
+      <div class="tipcard">
+        <h5><span class="e">🛣️</span>Платники и перегоны</h5>
+        <p>В Португалии — электронные платники (Via Verde при аренде), в Испании — AP. Длинные броски (Мадрид↔Лиссабон ~6 ч) лучше дробить: Эвора, Саламанка.</p>
+      </div>
+      <div class="tipcard">
+        <h5><span class="e">🌅</span>Где ловить закаты</h5>
+        <p>Лагуш — Ponta da Piedade. Кабо-да-Рока — край Европы. Guincho у нас под боком — океан, ветер и свежие морепродукты.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DECISIONS -->
+<section class="block">
+  <div class="wrap rv">
+    <div class="decis">
+      <div class="eyebrow">Решаем вместе</div>
+      <h3>Три вопроса, и финализируем</h3>
+      <p>Первая неделя расписана почти намертво. По второй (север и Испания) хочу свериться с вами:</p>
+      <div class="qrow">
+        <div class="qn">1</div>
+        <div class="qbody"><b>Сколько ночей в Порту?</b><span>Предлагаю две, с днём в Дору. Можно три — добавить Гимарайнш и Брагу рядом.</span></div>
+      </div>
+      <div class="qrow">
+        <div class="qn">2</div>
+        <div class="qbody"><b>Испания — да или нет?</b><span>Вариант А: Саламанка + Мадрид (как в плане). Вариант Б: остаёмся в Португалии — Авейру, Коимбра, Гимарайнш — и больше отдыха. Север Испании (Сан-Себастьян) прохладнее, но сильно дальше.</span></div>
+      </div>
+      <div class="qrow">
+        <div class="qn">3</div>
+        <div class="qbody"><b>Ночь на винодельне в Дору?</b><span>Романтичный апгрейд на медовый месяц — заночевать в кинте над рекой вместо возвращения в Порту.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="tileband-mini" aria-hidden="true"></div>
+  <p class="big">Ждём вас в Кашкайше — будет прекрасно.</p>
+  <p class="sign">Составлено с любовью · Даша &amp; Вова · Июль 2026</p>
+</footer>
+
+<script>
+  // плавная навигация: подсветка активного этапа
+  const chips = [...document.querySelectorAll('.phasenav .chip')];
+  const map = new Map(chips.map(c => [c.getAttribute('href').slice(1), c]));
+  const targets = [...map.keys()].map(id => document.getElementById(id)).filter(Boolean);
+
+  const navObs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        chips.forEach(c=>c.classList.remove('active'));
+        const c = map.get(e.target.id);
+        if(c) c.classList.add('active');
+      }
+    });
+  },{rootMargin:'-45% 0px -50% 0px',threshold:0});
+  targets.forEach(t=>navObs.observe(t));
+
+  // мягкое появление
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduce){
+    const rvObs = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); rvObs.unobserve(e.target); } });
+    },{rootMargin:'0px 0px -8% 0px',threshold:0.05});
+    document.querySelectorAll('.rv').forEach(el=>rvObs.observe(el));
+  } else {
+    document.querySelectorAll('.rv').forEach(el=>el.classList.add('in'));
+  }
+</script>
+</body>
+</html>
