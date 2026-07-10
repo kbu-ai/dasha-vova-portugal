@@ -219,6 +219,25 @@
   .note.tip b{color:var(--ink)}
   .note a{font-weight:600}
 
+  /* ---------- numbered walking route ---------- */
+  .stops{list-style:none;counter-reset:stop;margin:18px 0 6px;padding:0;display:grid;gap:16px}
+  .stops li{position:relative;padding-left:48px}
+  .stops li::before{
+    counter-increment:stop;content:counter(stop);
+    position:absolute;left:0;top:-1px;
+    width:30px;height:30px;border-radius:50%;
+    display:grid;place-items:center;
+    background:var(--accent,var(--azul));color:#fff;
+    font-family:'IBM Plex Mono',monospace;font-size:.8rem;
+  }
+  .stops li:not(:last-child)::after{
+    content:"";position:absolute;left:14px;top:34px;bottom:-16px;width:2px;
+    background:var(--line);
+  }
+  .stops .sname{font-weight:700;color:var(--ink)}
+  .stops .sname.pin{color:var(--azul)}
+  .stops p{margin:.25em 0 0;color:var(--ink-soft);font-size:.95rem;line-height:1.55}
+
   /* ---------- generic section card ---------- */
   .block{padding:clamp(34px,6vw,56px) 0 8px}
   .block > .wrap > h3{
@@ -347,11 +366,34 @@
         <span class="daynum">ДЕНЬ 02</span>
         <span class="daydate">11 ИЮЛЯ · СБ</span>
       </div>
-      <h4>Весь день — Лиссабон</h4>
-      <div class="pills"><span class="pill">Лиссабон</span><span class="pill">свободный день</span></div>
-      <p>Целый день на город — стартуете прямо от дома: из <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Saldanha+Lisboa" target="_blank" rel="noopener">Салданьи</a> на метро пара остановок до центра. Утро — <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Alfama+Lisboa" target="_blank" rel="noopener">Алфама</a> (собор Sé, смотровая Santa Luzia, легендарный трамвай 28), затем <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Praca+do+Comercio+Lisboa" target="_blank" rel="noopener">площадь Комерсиу</a> и Chiado. После обеда — <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Mosteiro+dos+Jeronimos+Belem" target="_blank" rel="noopener">Белен</a>: монастырь Жеронимуш, башня Belém и оригинальные <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Pasteis+de+Belem" target="_blank" rel="noopener">паштел-де-Белен</a>. На закат — смотровая <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Miradouro+Senhora+do+Monte+Lisboa" target="_blank" rel="noopener">Senhora do Monte</a>.</p>
-      <div class="note tip"><span class="ic">🚊</span><div><b>Трамвай 28</b> атмосферный, но очереди и карманники — садитесь рано утром на конечной и держите телефон при себе.</div></div>
-      <div class="note tip"><span class="ic">🌿</span><div><b>Если хочется спокойного старта</b> — в 10 минутах от дома сады и музей <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Calouste+Gulbenkian+Museum+Lisboa" target="_blank" rel="noopener">Гулбенкяна</a>: тенистый парк с прудами, можно выдохнуть после перелёта перед большим маршрутом.</div></div>
+      <h4>Лиссабон: пешком от дома через центр → Белен</h4>
+      <div class="pills"><span class="pill">Лиссабон</span><span class="pill">пешая прогулка</span><span class="pill">Белен</span></div>
+      <p>Первая половина дня — прогулка пешком прямо от порога вниз через город к реке, всё рядом и в основном под горку. Ваш маршрут по точкам:</p>
+      <ol class="stops">
+        <li>
+          <a class="sname pin" href="https://www.google.com/maps/search/?api=1&query=Centro+de+Arte+Moderna+Gulbenkian+Lisboa" target="_blank" rel="noopener">CAM · Centro de Arte Moderna Gulbenkian</a>
+          <p>В 10 минутах от дома. Модерн-крыло фонда Гулбенкяна вновь открылось в 2024-м после реконструкции японца Кенго Кумы — с плывущим навесом-«энгавой» и обновлённым садом. Внутри — португальский XX век (Паула Регу, Алмада Негрейрош), снаружи — один из красивейших парков города с прудами и тенью. Спокойный зелёный старт перед шумом центра.</p>
+        </li>
+        <li>
+          <a class="sname pin" href="https://www.google.com/maps/search/?api=1&query=Miradouro+Parque+Eduardo+VII+Lisboa" target="_blank" rel="noopener">Смотровая Parque Eduardo VII</a>
+          <p>С верхней террасы крупнейшего центрального парка — открыточный вид: подстриженный зелёный ковёр сбегает по оси вниз, к Авениде-да-Либердаде, площади Маркеша де Помбала и дальше к Байше и блеску Тежу. Весь город лежит как на ладони ещё до того, как вы в него спуститесь.</p>
+        </li>
+        <li>
+          <a class="sname pin" href="https://www.google.com/maps/search/?api=1&query=Convento+do+Carmo+Lisboa" target="_blank" rel="noopener">Convento do Carmo</a>
+          <p>Самая поэтичная руина Лиссабона: готическая церковь кармелитов, чью крышу обрушило Великое землетрясение 1755 года — и её так и не восстановили. Сегодня стрельчатые арки стоят прямо под открытым небом, а внутри — небольшой археологический музей. Молчаливый памятник катастрофе, что перекроила город.</p>
+        </li>
+        <li>
+          <a class="sname pin" href="https://www.google.com/maps/search/?api=1&query=Praca+do+Comercio+Lisboa" target="_blank" rel="noopener">Praça do Comércio</a>
+          <p>Парадная площадь у самой воды — когда-то морские ворота столицы. Жёлтые аркады обрамляют её с трёх сторон, в центре — конный король Жозе I, а в город ведёт триумфальная арка Rua Augusta (на неё можно подняться за видом). До 1755 года здесь стоял королевский дворец; теперь площадь широко распахнута на Тежу.</p>
+        </li>
+        <li>
+          <a class="sname pin" href="https://www.google.com/maps/search/?api=1&query=Castelo+de+Sao+Jorge+Lisboa" target="_blank" rel="noopener">Castelo de São Jorge</a>
+          <p>Мавританская крепость на самом высоком холме: одиннадцать башен и стены, по которым можно пройти. Лучшая панорама на черепичные крыши, реку и мост 25 Апреля — особенно в золотой час. По территории вальяжно разгуливают павлины.</p>
+        </li>
+      </ol>
+      <p>После обеда — на запад, в <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Belem+Lisboa" target="_blank" rel="noopener">Белен</a>: монастырь <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Mosteiro+dos+Jeronimos+Belem" target="_blank" rel="noopener">Жеронимуш</a> (мануэлино, ЮНЕСКО), башня <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Torre+de+Belem" target="_blank" rel="noopener">Belém</a> над водой и оригинальные <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Pasteis+de+Belem" target="_blank" rel="noopener">паштел-де-Белен</a> из пекарни 1837 года по секретному рецепту. Закат — на набережной Белена над Тежу.</p>
+      <div class="note tip"><span class="ic">👟</span><div><b>Обувь и рельеф:</b> от дома к реке идёте вниз, но к замку будет подъём. Везде каменная мостовая-<i>calçada</i>, местами скользкая — берите удобную обувь и воду (в июле жарко).</div></div>
+      <div class="note tip"><span class="ic">🚊</span><div><b>Из центра в Белен</b> — трамвай <b>15E</b> от Praça do Comércio или Cais do Sodré (~25 мин) либо такси/Bolt. На Жеронимуш и башню Belém берите билеты заранее по слоту — летом очереди.</div></div>
     </article>
   </div>
 </section>
