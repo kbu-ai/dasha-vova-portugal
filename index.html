@@ -238,6 +238,27 @@
   .stops .sname.pin{color:var(--azul)}
   .stops p{margin:.25em 0 0;color:var(--ink-soft);font-size:.95rem;line-height:1.55}
 
+  /* ---------- extra POI cards ---------- */
+  .poi-block{margin-top:34px}
+  .poi-block .eyebrow{display:block}
+  .poi-block h4{margin:.35em 0 .25em}
+  .poi-block .lead{color:var(--ink-soft);font-size:.95rem;margin:0}
+  .poi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:14px;margin-top:18px}
+  .poi{
+    display:block;background:var(--glaze-2);border:1px solid var(--line);border-radius:12px;
+    padding:15px 16px;color:var(--ink);transition:border-color .15s,transform .15s;
+  }
+  .poi:hover{border-color:var(--accent,var(--azul));transform:translateY(-2px)}
+  .poi-t{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+  .poi-name{font-weight:700;font-size:1.02rem;color:var(--azul-deep);line-height:1.25}
+  .poi-rate{flex:0 0 auto;font-family:'IBM Plex Mono',monospace;font-size:.82rem;color:var(--gold);white-space:nowrap}
+  .poi-area{
+    display:inline-block;font-family:'IBM Plex Mono',monospace;
+    font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;
+    color:var(--ink-soft);margin:.5em 0 .1em;
+  }
+  .poi p{margin:.45em 0 0;font-size:.9rem;line-height:1.5;color:var(--ink-soft)}
+
   /* ---------- generic section card ---------- */
   .block{padding:clamp(34px,6vw,56px) 0 8px}
   .block > .wrap > h3{
@@ -395,6 +416,57 @@
       <div class="note tip"><span class="ic">👟</span><div><b>Обувь и рельеф:</b> от дома к реке идёте вниз, но к замку будет подъём. Везде каменная мостовая-<i>calçada</i>, местами скользкая — берите удобную обувь и воду (в июле жарко).</div></div>
       <div class="note tip"><span class="ic">🚊</span><div><b>Из центра в Белен</b> — трамвай <b>15E</b> от Praça do Comércio или Cais do Sodré (~25 мин) либо такси/Bolt. На Жеронимуш и башню Belém берите билеты заранее по слоту — летом очереди.</div></div>
     </article>
+
+    <div class="poi-block rv">
+      <span class="eyebrow">Бонус · Лиссабон</span>
+      <h4>Ещё точки поблизости</h4>
+      <p class="lead">Их удобно вплести в день по городу: <b>Santa Luzia</b> и <b>São Vicente</b> — прямо у замка на маршруте выше, <b>Rossio</b> и <b>São Domingos</b> — рядом с Praça do Comércio, <b>Bica</b> — по пути к Белену, а <b>Эстрела</b> — короткий крюк на запад. Рейтинг — по Google (≈, лето 2026).</p>
+      <div class="poi-grid">
+
+        <a class="poi" href="https://www.google.com/maps/search/?api=1&query=Miradouro+de+Santa+Luzia+Lisboa" target="_blank" rel="noopener">
+          <div class="poi-t"><span class="poi-name">Miradouro de Santa Luzia</span><span class="poi-rate">★ 4,6</span></div>
+          <span class="poi-area">Алфама · у замка</span>
+          <p>Самая живописная смотровая Алфамы: увитая бугенвиллеей пергола, бело-синие азулежу на стене церкви и черепичные крыши, сбегающие к Тежу. Особенно хороша на закате — и прямо на вашем маршруте к Castelo de São Jorge.</p>
+        </a>
+
+        <a class="poi" href="https://www.google.com/maps/search/?api=1&query=Igreja+de+Sao+Vicente+de+Fora+Lisboa" target="_blank" rel="noopener">
+          <div class="poi-t"><span class="poi-name">São Vicente de Fora</span><span class="poi-rate">★ 4,6</span></div>
+          <span class="poi-area">Алфама · монастырь</span>
+          <p>Монастырь, основанный первым королём Португалии в XII веке (нынешнее барочно-маньеристское здание — XVII в.). Внутри — азулежу с баснями Лафонтена и Королевский пантеон Браганса, где покоятся почти все короли. С крыши — отличный вид на Алфаму, и куда тише, чем на главных точках.</p>
+        </a>
+
+        <a class="poi" href="https://www.google.com/maps/search/?api=1&query=Praca+Dom+Pedro+IV+Rossio+Lisboa" target="_blank" rel="noopener">
+          <div class="poi-t"><span class="poi-name">Praça Dom Pedro IV · Rossio</span><span class="poi-rate">★ 4,5</span></div>
+          <span class="poi-area">Байша · главная площадь</span>
+          <p>Сердце города со Средневековья: рынок, народные праздники, а когда-то и аутодафе инквизиции. Знаменита волнистой мозаикой-кальсадой, двумя барочными фонтанами и колонной с Педру IV; по краям — Национальный театр и неомануэлиновый вокзал Rossio. В двух шагах от Praça do Comércio.</p>
+        </a>
+
+        <a class="poi" href="https://www.google.com/maps/search/?api=1&query=Igreja+de+Sao+Domingos+Lisboa" target="_blank" rel="noopener">
+          <div class="poi-t"><span class="poi-name">Igreja de São Domingos</span><span class="poi-rate">★ 4,5</span></div>
+          <span class="poi-area">Байша · у Россиу</span>
+          <p>Одна из старейших церквей Лиссабона (XIII в.), место королевских коронаций и свадеб. Пережила землетрясение 1755-го, но выгорела в пожаре 1959-го — и её намеренно оставили такой: обугленные, растрескавшиеся от жара красные колонны под кроваво-охряным сводом. Ни на что не похоже. Рядом — мемориал жертвам погрома 1506 года.</p>
+        </a>
+
+        <a class="poi" href="https://www.google.com/maps/search/?api=1&query=Ascensor+da+Bica+Lisboa" target="_blank" rel="noopener">
+          <div class="poi-t"><span class="poi-name">Ascensor da Bica</span><span class="poi-rate">★ 4,3</span></div>
+          <span class="poi-area">Бика · к Каиш-ду-Содре</span>
+          <p>Легендарный жёлтый фуникулёр 1892 года, национальный памятник и один из символов города. Ползёт по крутой Rua da Bica сквозь пастельные домики, внизу — полоска реки. Самый фотогеничный подъём Лиссабона: приходите пораньше, пока нет очередей и толп с камерами.</p>
+        </a>
+
+        <a class="poi" href="https://www.google.com/maps/search/?api=1&query=Jardim+da+Estrela+Lisboa" target="_blank" rel="noopener">
+          <div class="poi-t"><span class="poi-name">Jardim da Estrela</span><span class="poi-rate">★ 4,6</span></div>
+          <span class="poi-area">Эстрела · сад</span>
+          <p>Романтический сад 1852 года напротив базилики: вековые жакаранды и гинкго, пруды с утками, кованая эстрада 1884 года и кафе в тени крон. Любимое место самих лиссабонцев — зелень, прохлада и ноль туристической суеты. Вход свободный.</p>
+        </a>
+
+        <a class="poi" href="https://www.google.com/maps/search/?api=1&query=Basilica+da+Estrela+Lisboa" target="_blank" rel="noopener">
+          <div class="poi-t"><span class="poi-name">Basílica da Estrela</span><span class="poi-rate">★ 4,6</span></div>
+          <span class="poi-area">Эстрела · базилика</span>
+          <p>Величественная бело-мраморная базилика конца XVIII века с огромным куполом — обетный храм королевы Марии I за рождение наследника (здесь же её гробница). Внутри — розово-серый мрамор и терракотовые ясли в натуральную величину (500+ фигур). За ~5 € можно подняться к куполу с панорамой на город — один из самых недооценённых видов.</p>
+        </a>
+
+      </div>
+    </div>
   </div>
 </section>
 
